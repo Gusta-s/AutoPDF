@@ -31,4 +31,11 @@ public class MembroService {
     public List<Membro> listarTodos(){
             return membrorepository.findAll();
         }
+    @Transactional
+    public void deletar(Long id){
+        if (!membrorepository.existsById(id)) {
+            throw new RuntimeException("Não existe um membro cadastrado com ID");
+        }
+        membrorepository.deleteById(id);
+    }
 }
