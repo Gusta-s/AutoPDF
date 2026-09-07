@@ -18,12 +18,12 @@ public class Membro {
     private Long id;
 
     @NotBlank
-    @Size(min = 10, max = 100, message = "O nome deve ter no minimo 10 caracteres")
+    @Size(min = 3, max = 100, message = "O nome deve ter no minimo 10 caracteres")
     @Column(length = 130, nullable = false)
     private String nome;
 
     @NotBlank
-    @Size(min = 10, max = 100, message = "O nome deve ter no minimo 10 caracteres")
+    @Size(min = 3, max = 100, message = "O nome deve ter no minimo 10 caracteres")
     @Column(length = 130, nullable = false)
     private String cargo;
 

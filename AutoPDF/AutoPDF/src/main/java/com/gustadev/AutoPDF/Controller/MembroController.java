@@ -1,8 +1,11 @@
 package com.gustadev.AutoPDF.Controller;
 
+import java.util.List;
+
 import org.springframework.http.HttpStatus;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,5 +31,10 @@ public class MembroController {
     public ResponseEntity<Membro> criar(@RequestBody @Valid MembroRequest dto){
         Membro membro = membroService.salvar(dto);
         return ResponseEntity.status(HttpStatus.CREATED).body(membro);
+    }
+    @GetMapping ("/listar")
+    public ResponseEntity<List<Membro>> listarTodos() {
+        List <Membro> membros = membroService.listarTodos();
+        return ResponseEntity.ok(membros);
     }
 }

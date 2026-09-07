@@ -1,5 +1,7 @@
 package com.gustadev.AutoPDF.Services;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.gustadev.AutoPDF.DTO.MembroRequest;
@@ -26,4 +28,7 @@ public class MembroService {
         membro.setCargo(dto.cargo());
         return membrorepository.save(membro);
     }
+    public List<Membro> listarTodos(){
+            return membrorepository.findAll();
+        }
 }
